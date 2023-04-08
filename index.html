@@ -40,5 +40,66 @@
         <li><a href="#">Portfolio</a></li>
     </ul>
       </footer>
+      <script>
+		// impostazioni delle particelle
+		var particleCount = 100;
+		var particleRadius = 3;
+		var particleSpeed = 0.7;
+		
+		// colori delle particelle
+		var colors = ["#FFFFFF"];
+		
+		// creazione del canvas
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		
+		// creazione delle particelle
+		var particles = [];
+		for (var i = 0; i < particleCount; i++) {
+			var particle = {
+				x: Math.random() * canvas.width,
+				y: Math.random() * canvas.height,
+				vx: (Math.random() - 0.5) * particleSpeed,
+				vy: (Math.random() - 0.5) * particleSpeed,
+				color: colors[Math.floor(Math.random() * colors.length)]
+			};
+			particles.push(particle);
+		}
+		
+		// animazione delle particelle
+		function animate() {
+			requestAnimationFrame(animate);
+			
+			// cancellazione del canvas
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			
+			// disegno delle particelle
+			for (var i = 0; i < particles.length; i++) {
+				var particle = particles[i];
+				
+				ctx.beginPath();
+				ctx.arc(particle.x, particle.y, particleRadius, 0, Math.PI * 2);
+				ctx.fillStyle = particle.color;
+				ctx.fill();
+				
+				// aggiornamento della posizione delle particelle
+				particle.x += particle.vx;
+				particle.y += particle.vy;
+				
+				// rimbalzo delle particelle sui bordi del canvas
+				if (particle.x < 0 || particle.x > canvas.width) {
+					particle.vx = -particle.vx;
+				}
+				if (particle.y < 0 || particle.y > canvas.height) {
+					particle.vy = -particle.vy;
+				}
+			}
+		}
+		
+		// avvio dell'animazione
+		animate();
+	</script>
 </body>
 </html>
