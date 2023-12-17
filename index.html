@@ -1,105 +1,124 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-    <title>Rame83</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <a href="#" class="logo"><i class="ri-home-heart-fill"></i><span>Logo</span>
-        </a>
-        <ul class="navbar">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About Me</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Portfolio</a></li>
-        </ul>
-    </header>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">    
+<title>Links website</title>
+<script src="https://unpkg.com/feather-icons"></script>
+<style>
+body {
+  background: url("https://www.w3schools.com/howto/img_link_tree_template2_bg.jpg"); /* The image used for background */
+}
 
-    <div class="animated-image">
-        <img src="image.png" alt="image description" class="animated-image">
-    </div>
-    
-    <div class="text-container">
-        <p>Welcome in my website <br>
-            You can see some things i make <br>
-            like plugins or templates for site and much more
-        </p>
-    </div>
+.container {
+  width: 100%;
+  height: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-    <footer>
-        <a href="#" class="logos"><i class="ri-home-heart-fill"></i><span>Logo</span>
-        </a>
-        <ul class="list">
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Portfolio</a></li>
-    </ul>
-      </footer>
-      <script>
-		// impostazioni delle particelle
-		var particleCount = 100;
-		var particleRadius = 3;
-		var particleSpeed = 0.7;
-		
-		// colori delle particelle
-		var colors = ["#FFFFFF"];
-		
-		// creazione del canvas
-		var canvas = document.getElementById("myCanvas");
-		var ctx = canvas.getContext("2d");
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
-		
-		// creazione delle particelle
-		var particles = [];
-		for (var i = 0; i < particleCount; i++) {
-			var particle = {
-				x: Math.random() * canvas.width,
-				y: Math.random() * canvas.height,
-				vx: (Math.random() - 0.5) * particleSpeed,
-				vy: (Math.random() - 0.5) * particleSpeed,
-				color: colors[Math.floor(Math.random() * colors.length)]
-			};
-			particles.push(particle);
-		}
-		
-		// animazione delle particelle
-		function animate() {
-			requestAnimationFrame(animate);
-			
-			// cancellazione del canvas
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			
-			// disegno delle particelle
-			for (var i = 0; i < particles.length; i++) {
-				var particle = particles[i];
-				
-				ctx.beginPath();
-				ctx.arc(particle.x, particle.y, particleRadius, 0, Math.PI * 2);
-				ctx.fillStyle = particle.color;
-				ctx.fill();
-				
-				// aggiornamento della posizione delle particelle
-				particle.x += particle.vx;
-				particle.y += particle.vy;
-				
-				// rimbalzo delle particelle sui bordi del canvas
-				if (particle.x < 0 || particle.x > canvas.width) {
-					particle.vx = -particle.vx;
-				}
-				if (particle.y < 0 || particle.y > canvas.height) {
-					particle.vy = -particle.vy;
-				}
-			}
-		}
-		
-		// avvio dell'animazione
-		animate();
-	</script>
-</body>
+.links-container {
+  display: flex;
+  flex-direction: column;
+  jusify-content: center;
+  align-items: center;
+}
+
+.links-container a {
+  width: 80%;
+}
+
+.w3-theme-l1:hover {
+  background-color: #f279a1 !important;
+}
+
+.margin-top-2 {
+  margin-top: 32px;
+}
+
+.bottom {
+  width: 100%;
+  text-align: center;
+  width: auto;
+  font-weight: bolder;
+}
+
+.bottom span {
+  color: #ed4d82;
+}
+
+.bottom svg {
+  stroke: #ed4d82;
+  fill: #ed4d82;
+}
+
+@media (min-width: 768px) {
+  .link {
+    width: 100%;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+</style>
+  </head>
+  <body>
+    <!-- Content container -->
+    <div class="container">
+
+      <!-- Image and name container. Change to your pictue here. -->
+      <div style="text-align: center">
+        <img src="https://www.w3schools.com/howto/img_link_tree_template2_bio.jpg" class="w3-margin" alt="image" width="150px" height="150px" style="border-radius: 50%;">
+        <p><span class="name w3-padding w3-pink w3-round" style="font-weight: bolder;">Hi, I'm Jane!</span></p>
+        <p style="font-weight: bolder;">Check out my links!</p>
+      </div>
+
+      <!-- Links section 1. Replace the # inside of the "" with your links. -->
+      <h4 class="margin-top-2" style="text-align: center;">MY SOCIAL NETWORKS</h4>
+      <div class="links-container">
+        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Facebook</a>
+        <br>
+        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Instagram</a>
+        <br>
+        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Twitter</a>
+        <br>
+        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Github</a>
+      </div>
+
+      <!-- Links section 2. Replace the # inside of the "" with your links. -->
+      <h4 class="margin-top-2" style="text-align: center;">MY CV</h4>
+      <div class="links-container">
+        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Curriculum Vitae</a>
+      </div>
+
+      <!-- Links section 3. Replace the # inside of the "" with your links. -->
+      <h4 class="margin-top-2" style="text-align: center;">MY BLOG</h4>
+      <div class="links-container">
+        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Hashnode</a>
+      </div>
+
+      <!-- Links section 3. Replace the # inside of the "" with your links. -->
+      <h4 class="margin-top-2" style="text-align: center;">MY BUSINESS</h4>
+      <div class="links-container">
+        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Business</a>
+      </div>
+
+      <!-- Bottom section 3 -->
+      <div class="bottom margin-top-2 w3-padding w3-round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span style="vertical-align: 7px;"> 2021 - Jane Doe</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      </div>
+
+    </div>
+    <script>
+      feather.replace()
+    </script>
+  </body>  
 </html>
